@@ -1,29 +1,108 @@
-# US H-1B Visa Lottery and Petition Data FY 2021 - FY 2024
+#### H-1B Visa Lottery Dashboard PRD
 
-Bloomberg News obtained data on all H-1B lottery registrations, selections, and petitions for fiscal years 2021 through 2024 after bringing a lawsuit against the Department of Homeland Security under the Freedom of Information Act. 
+Develop an interactive, data-rich dashboard using Vervel to analyze and visualize the H-1B visa lottery system. This dashboard will allow users to explore key metrics such as employer participation, salaries, job titles, and country of origin through detailed filters and visualizations. The goal is to enable users to uncover trends, disparities, and systemic issues intuitively.
 
-You can use this repository to reproduce findings featured in our story "[Thousands of US Work Visas Are Going to Middlemen Gaming the System](https://www.bloomberg.com/graphics/2024-staffing-firms-game-h1b-visa-lottery-system/)". Our methodology is described at the bottom of the article. 
+#### Implementation Details
+##### Core Filters
+##### By Year:
+###### Column(s): fiscal_year, rec_date.
+##### Behavior: Users select a specific year or range of years.
+##### Use Case: Identify trends over time, such as changes in approvals or registrations.
+##### By Employer:
+#### Column(s): employer_name, i129_employer_name.
+##### Behavior: Search or multi-select specific employers (e.g., Wipro, Amazon).
+##### Use Case: Compare approval rates and average salaries between employers.
+##### By Job Title:
+##### Column(s): job_title.
+##### Behavior: Filter by title or keyword (e.g., “Software Engineer”).
+##### Use Case: Evaluate common roles and associated salaries.
+##### By Country of Origin:
+##### Column(s): country_of_birth, country_of_nationality.
+##### Behavior: Interactive selection via a world map or dropdown.
+##### Use Case: Drill into disparities in registrations or approvals by applicant nationality.
+##### By Salary Range:
+##### Column(s): wage_amt, wage_unit.
+##### Behavior: Set a numeric range (e.g., $50,000–$150,000).
+##### Use Case: Compare salary trends across job titles or employers.
+##### By Lottery Participation:
+##### Column(s): ben_multi_reg_ind.
+##### Behavior: Binary filter to show single vs. multiple registrations.
+##### Use Case: Identify potential instances of lottery "gaming."
+##### By Worksite:
+##### Column(s): worksite_city, worksite_state.
+##### Behavior: Search by city/state or select from a map.
+##### Use Case: Examine geographic distribution of visa allocations.
+##### Approval Status:
+##### Column(s): status_type, first_decision.
+##### Behavior: Filter by approval, denial, or pending status.
+##### Use Case: Assess processing outcomes.
 
-## Background
+#### User Flow
+#### Landing Page
+#### Elements: Key summary visualizations (e.g., total approvals, top employers).
+##### Actions: Click any summary to dive deeper.
+##### Filters Available: Year, Employer, Job Title.
+#### Country of Origin Analysis
+#### View: Interactive world map showing registrations and approvals by country.
+#### User Actions:
+#### Click a country to view granular data (e.g., top employers, job titles).
+Apply additional filters (e.g., fiscal year, job title).
+Visualizations:
+Heat map (geographic distribution).
+Drill-down bar charts (country-specific data).
+Employer Insights
+View: Bar chart of top employers by registrations/approvals.
+User Actions:
+Select an employer to view salary distributions or approval rates.
+Add filters (e.g., year, job title).
+Visualizations:
+Bar chart: Registrations/approvals by employer.
+Scatter plot: Approval rates vs. average salaries.
+Network graph: Employer-applicant relationships.
+Salary and Job Title Trends
+View: Salary distributions for selected job titles and employers.
+User Actions:
+Filter by salary range or job title.
+Highlight outliers (e.g., unusually low/high salaries).
+Visualizations:
+Box plot: Salary ranges across employers/job titles.
+Word cloud: Most common job titles.
+#### Lottery Disparities
+#### View: Trend analysis of lottery participation and approval over time.
+#### User Actions:
+Filter by employer, country, or fiscal year.
+Toggle between single and multiple registrations.
+Visualizations:
+Time-series chart: Registrations vs. approvals by year.
+Treemap: Multiple vs. single registrations.
+Exporting Insights
+ #####Users can download:
+Visualizations as PDF or PNG.
+Raw datasets as CSV.
 
-This data was produced by the U.S. Citizenship and Immigration Services, an agency under DHS tasked with adjudicating H-1B petitions. Every April, the USCIS conducts a random lottery to determine which H-1B seekers can submit full visa petitions. 
+#### Visualization Types
+Bar Charts: For employer rankings and registration counts.
+Heat Maps: Geographical distribution of visa applicants.
+Scatter Plots: Employer approval rates vs. average salaries.
+#### Box Plots: Salary comparisons.
+Word Clouds: Common job titles.
+Treemaps: Visualizing lottery disparities.
+Time-Series Charts: Trends over time.
 
-Each row in the data represents a lottery registration, which may or may not correspond to a unique individual because each candidate can have multiple registrations submitted by different employers. Once selected, the employer can submit an H-1B petition on behalf of the beneficiary. In case of a visa petition, the data includes more information about the proposed job, including salary, location, etc. 
+#### Success Metrics
+#### Engagement Metrics:
+Average session time: Target 10+ minutes.
+Filter usage: At least 5 filters applied per session.
+Downloads: 500+ visualizations/datasets per quarter.
+#### Performance Metrics:
+Load time: <3 seconds for datasets up to 10M rows.
+Dynamic filtering: Visualizations update instantly (<1 second).
 
-An approved H-1B petition is necessary for, but does not always result in, an H-1B visa, which is a travel document. After an applicant receives an H-1B approval from the USCIS, they can apply for either an H-1B visa at a US Consulate abroad or an Adjustment of Status with the USCIS if they're already in the US.
+#### Technical Considerations
+Framework: Vervel for visualization and data handling.
+Data Storage: Cloud-based backend optimized for large datasets.
+Performance Enhancements:
+Pre-compute aggregates for common filters.
+Lazy loading for large visualizations.
 
-## Citation
-
-Please cite the data as sourced from USCIS and obtained by Bloomberg. Email Bloomberg reporter Eric Fan at `xfan134@bloomberg.net` if you have any questions.
-
-## File Description
-
-| File Name | Description |
-| ------------------------------------------------------------------- | ------------------------------------------------------------ |
-| `TRK_13139_I129_H1B_Registrations_FY21_FY24_FOIA_FIN.xlsx` | Data Dictionary |
-| `TRK_13139_FY2021.csv` | FY 2021 data (April 2020 lottery) |
-| `TRK_13139_FY2022.csv` | FY 2022 data (April 2021 lottery) |
-| `TRK_13139_FY2023.csv` | FY 2023 data (April 2022 lottery) |
-| `TRK_13139_FY2024_single_reg.csv` | FY 2024 data (April 2023 lottery), single registrations |
-| `TRK_13139_FY2024_multi_reg.csv` | FY 2024 data (April 2023 lottery), multiple registrations |
 
