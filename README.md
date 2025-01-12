@@ -75,10 +75,6 @@ Toggle between single and multiple registrations.
 Visualizations:
 Time-series chart: Registrations vs. approvals by year.
 Treemap: Multiple vs. single registrations.
-Exporting Insights
- #####Users can download:
-Visualizations as PDF or PNG.
-Raw datasets as CSV.
 
 #### Visualization Types
 Bar Charts: For employer rankings and registration counts.
