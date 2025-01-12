@@ -1,10 +1,9 @@
 #### H-1B Visa Lottery Dashboard 
 
-Interactive, data-rich dashboard to analyze and visualize the United States H-1B visa lottery system. Users can explore key metrics such as employer participation, salaries, job titles, and country of origin through detailed filters and visualizations. 
+Interactive, data-rich dashboard to analyze and visualize the United States H-1B visa lottery system. Explore key metrics such as employer participation, salaries, job titles, and country of origin through detailed filters and visualizations. 
 
-### Implementation Details
 #### Core Filters
-##### By Year:
+##### Year:
 ##### fiscal_year, rec_date.
 ##### Select a specific year or range of years.
 ##### Identify changes in approvals or registrations.
