@@ -4,14 +4,11 @@ Interactive, data-rich dashboard to analyze and visualize the United States H-1B
 
 #### Core Filters
 ##### fiscal_year
-##### Identify changes in approvals or registrations.
-##### By employer_name (e.g., Wipro, Amazon).
-##### Use Case: Compare approval rates and average salaries between employers.
-##### By Job Title: (e.g., “Software Engineer”).
-##### By Country of birth, country_of_nationality.
-##### By Salary Range: wage_amt, wage_unit. Compare salary trends across job titles or employers.
-##### By Worksite: worksite_city, worksite_state.
-##### Behavior: Search by city/state or select from a map.
+##### Employer_name (e.g., Wipro, Amazon).
+##### Job Title: (e.g., “Software Engineer”).
+##### Country of birth, country_of_nationality.
+##### Salary Range: wage_amt, wage_unit. Compare salary trends across job titles or employers.
+##### Worksite: worksite_city, worksite_state.
 
 #### User Flow
 #### Landing Page
