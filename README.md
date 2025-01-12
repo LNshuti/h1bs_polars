@@ -1,41 +1,29 @@
-#### H-1B Visa Lottery Dashboard PRD
+#### H-1B Visa Lottery Dashboard 
 
-Develop an interactive, data-rich dashboard using Vervel to analyze and visualize the H-1B visa lottery system. This dashboard will allow users to explore key metrics such as employer participation, salaries, job titles, and country of origin through detailed filters and visualizations. The goal is to enable users to uncover trends, disparities, and systemic issues intuitively.
+Interactive, data-rich dashboard to analyze and visualize the United States H-1B visa lottery system. Users can explore key metrics such as employer participation, salaries, job titles, and country of origin through detailed filters and visualizations. 
 
-#### Implementation Details
-##### Core Filters
+### Implementation Details
+#### Core Filters
 ##### By Year:
-###### Column(s): fiscal_year, rec_date.
-##### Behavior: Users select a specific year or range of years.
-##### Use Case: Identify trends over time, such as changes in approvals or registrations.
-##### By Employer:
-#### Column(s): employer_name, i129_employer_name.
+##### fiscal_year, rec_date.
+##### Select a specific year or range of years.
+##### Identify changes in approvals or registrations.
+##### By employer_name, i129_employer_name.
 ##### Behavior: Search or multi-select specific employers (e.g., Wipro, Amazon).
 ##### Use Case: Compare approval rates and average salaries between employers.
 ##### By Job Title:
 ##### Column(s): job_title.
 ##### Behavior: Filter by title or keyword (e.g., “Software Engineer”).
 ##### Use Case: Evaluate common roles and associated salaries.
-##### By Country of Origin:
-##### Column(s): country_of_birth, country_of_nationality.
-##### Behavior: Interactive selection via a world map or dropdown.
-##### Use Case: Drill into disparities in registrations or approvals by applicant nationality.
-##### By Salary Range:
-##### Column(s): wage_amt, wage_unit.
-##### Behavior: Set a numeric range (e.g., $50,000–$150,000).
-##### Use Case: Compare salary trends across job titles or employers.
-##### By Lottery Participation:
-##### Column(s): ben_multi_reg_ind.
-##### Behavior: Binary filter to show single vs. multiple registrations.
-##### Use Case: Identify potential instances of lottery "gaming."
-##### By Worksite:
-##### Column(s): worksite_city, worksite_state.
+##### By Country of birth, country_of_nationality.
+##### Interactive selection via a world map or dropdown to Drill into disparities in registrations or approvals by applicant nationality.
+##### By Salary Range: wage_amt, wage_unit. Compare salary trends across job titles or employers.
+##### By Lottery Participation: ben_multi_reg_ind.
+##### Binary filter to show single vs. multiple registrations.
+##### Identify potential instances of lottery "gaming."
+##### By Worksite: worksite_city, worksite_state.
 ##### Behavior: Search by city/state or select from a map.
-##### Use Case: Examine geographic distribution of visa allocations.
-##### Approval Status:
-##### Column(s): status_type, first_decision.
-##### Behavior: Filter by approval, denial, or pending status.
-##### Use Case: Assess processing outcomes.
+##### Use Case: Examine geographic distribution of visa allocations by approval, denial, or pending status.
 
 #### User Flow
 #### Landing Page
