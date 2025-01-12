@@ -4,36 +4,20 @@ Interactive, data-rich dashboard to analyze and visualize the United States H-1B
 
 #### Core Filters
 ##### Year:
-##### fiscal_year, rec_date.
-##### Select a specific year or range of years.
+##### fiscal_year
 ##### Identify changes in approvals or registrations.
-##### By employer_name, i129_employer_name.
-##### Behavior: Search or multi-select specific employers (e.g., Wipro, Amazon).
+##### By employer_name (e.g., Wipro, Amazon).
 ##### Use Case: Compare approval rates and average salaries between employers.
-##### By Job Title:
-##### Column(s): job_title.
-##### Behavior: Filter by title or keyword (e.g., “Software Engineer”).
-##### Use Case: Evaluate common roles and associated salaries.
+##### By Job Title: (e.g., “Software Engineer”).
 ##### By Country of birth, country_of_nationality.
-##### Interactive selection via a world map or dropdown to Drill into disparities in registrations or approvals by applicant nationality.
 ##### By Salary Range: wage_amt, wage_unit. Compare salary trends across job titles or employers.
-##### By Lottery Participation: ben_multi_reg_ind.
-##### Binary filter to show single vs. multiple registrations.
-##### Identify potential instances of lottery "gaming."
 ##### By Worksite: worksite_city, worksite_state.
 ##### Behavior: Search by city/state or select from a map.
-##### Use Case: Examine geographic distribution of visa allocations by approval, denial, or pending status.
 
 #### User Flow
 #### Landing Page
-#### Elements: Key summary visualizations (e.g., total approvals, top employers).
-##### Actions: Click any summary to dive deeper.
 ##### Filters Available: Year, Employer, Job Title.
-#### Country of Origin Analysis
-#### View: Interactive world map showing registrations and approvals by country.
-#### User Actions:
 #### Click a country to view granular data (e.g., top employers, job titles).
-Apply additional filters (e.g., fiscal year, job title).
 Visualizations:
 Heat map (geographic distribution).
 Drill-down bar charts (country-specific data).
@@ -48,7 +32,6 @@ Scatter plot: Approval rates vs. average salaries.
 Network graph: Employer-applicant relationships.
 Salary and Job Title Trends
 View: Salary distributions for selected job titles and employers.
-User Actions:
 Filter by salary range or job title.
 Highlight outliers (e.g., unusually low/high salaries).
 Visualizations:
