@@ -11,8 +11,7 @@ Interactive, data-rich dashboard to analyze and visualize the United States H-1B
 ##### Worksite: worksite_city, worksite_state.
 
 #### Lottery Disparities
-#### View: Trend analysis of lottery participation and approval over time.
-#### User Actions:
+#### Trend analysis of lottery participation and approval over time.
 Filter by employer, country, or fiscal year.
 Toggle between single and multiple registrations.
 Visualizations:
