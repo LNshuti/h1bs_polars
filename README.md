@@ -12,11 +12,12 @@ Interactive dashboard to visualize the United States H-1B visa lottery system. E
 6. Worksite: worksite_city, worksite_state.
 
 ### Trend analysis of lottery participation and approval over time.
-Filter by employer, country, or fiscal year.
-Toggle between single and multiple registrations.
-Visualizations:
-Time-series chart: Registrations vs. approvals by year.
-Treemap: Multiple vs. single registrations.
+- Filter by employer, country, or fiscal year.
+- Toggle between single and multiple registrations.
+
+### Visualizations:
+- Time-series chart: Registrations vs. approvals by year.
+- Treemap: Multiple vs. single registrations.
 
 ### Citations
 
