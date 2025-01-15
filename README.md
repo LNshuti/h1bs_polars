@@ -9,8 +9,8 @@ Interactive dashboard to visualize the United States H-1B visa lottery system. E
 1. Fiscal year
 2. Employer name (e.g., Wipro, Amazon).
 3. Job title: (e.g., “Software Engineer”).
-4. Country of birth, country_of_nationality.
-5. Salary Range: wage_amt, wage_unit.
+4. Country of birth, country of nationality.
+5. Salary Range: wage amt(e.g. $50,000), wage unit(e.g. year).
 6. Worksite: worksite_city, worksite_state.
 
 ### Trend analysis of lottery participation and approval over time.
