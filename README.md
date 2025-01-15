@@ -2,10 +2,9 @@
 
 Interactive dashboard to visualize the United States H-1B visa lottery system. Explore key metrics such as employer participation, salaries, job titles, and country of origin through detailed filters and visualizations. 
 
-### Core Filters
+### Figure 1. Core Filters
 
 ![image](https://github.com/user-attachments/assets/b7da1540-3a9f-422a-a325-2f7d1026b93f)
-
 
 1. Fiscal year
 2. Employer name (e.g., Wipro, Amazon).
@@ -15,7 +14,7 @@ Interactive dashboard to visualize the United States H-1B visa lottery system. E
 6. Worksite: worksite_city, worksite_state.
 
 ### Trend analysis of lottery participation and approval over time.
-**Figure 1:** Filter by employer, country, or fiscal year
+**Figure 2:** Number of H1B recipients in 2021-2023 with annual listed salary between $150,000 and $900,000  by gender
 
 - Toggle between single and multiple registrations.
 
