@@ -13,7 +13,7 @@ Interactive dashboard to visualize the United States H-1B visa lottery system. E
 5. Salary Range: wage amt(e.g. $50,000), wage unit(e.g. year).
 6. Worksite: worksite_city, worksite_state.
 
-### **Figure 2:** Number of H1B recipients with annual listed salary between $150,000 and $900,000 by gender 2021-2023.
+### **Figure 2:** Number of H1B recipients with annual listed salary between $150,000 and $900,000 in 2021-2023.
 
 ![image](https://github.com/user-attachments/assets/166dc021-cbee-4b93-8041-3dc506a492e2)
 
