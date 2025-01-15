@@ -16,7 +16,7 @@ Interactive dashboard to visualize the United States H-1B visa lottery system. E
 ### Trend analysis of lottery participation and approval over time.
 **Figure 2:** Number of H1B recipients with annual listed salary between $150,000 and $900,000 by gender 2021-2023
 
-![image](https://github.com/user-attachments/assets/5d2fea0f-1278-457a-bcee-9d129073be2e)
+![image](https://github.com/user-attachments/assets/166dc021-cbee-4b93-8041-3dc506a492e2)
 
 ### Visualizations:
 - Time-series chart: Registrations vs. approvals by year.
