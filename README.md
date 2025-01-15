@@ -4,6 +4,9 @@ Interactive dashboard to visualize the United States H-1B visa lottery system. E
 
 ### Core Filters
 
+![image](https://github.com/user-attachments/assets/b7da1540-3a9f-422a-a325-2f7d1026b93f)
+
+
 1. Fiscal year
 2. Employer name (e.g., Wipro, Amazon).
 3. Job title: (e.g., “Software Engineer”).
@@ -12,7 +15,8 @@ Interactive dashboard to visualize the United States H-1B visa lottery system. E
 6. Worksite: worksite_city, worksite_state.
 
 ### Trend analysis of lottery participation and approval over time.
-- Filter by employer, country, or fiscal year.
+**Figure 1:** Filter by employer, country, or fiscal year
+
 - Toggle between single and multiple registrations.
 
 ### Visualizations:
