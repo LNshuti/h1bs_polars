@@ -17,6 +17,11 @@ Interactive dashboard to visualize the United States H-1B visa lottery system. E
 
 ![image](https://github.com/user-attachments/assets/166dc021-cbee-4b93-8041-3dc506a492e2)
 
+### **Figure 3:** Distribution of Salary by gender for people from Ukraine earning > $50,000
+
+![image](https://github.com/user-attachments/assets/e5277697-77aa-4879-90de-df6ad1d63581)
+
+
 ### Visualizations:
 - Time-series chart: Registrations vs. approvals by year.
 - Treemap: Multiple vs. single registrations.
