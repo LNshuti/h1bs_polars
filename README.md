@@ -21,7 +21,7 @@ Interactive dashboard to visualize the United States H-1B visa lottery system. E
 
 ![image](https://github.com/user-attachments/assets/e5277697-77aa-4879-90de-df6ad1d63581)
 
-### **Figure 4:** Distribution of Salary by gender for recipients of all nationalities residing in Seatte earning > $35,000
+### **Figure 4:** Salary for H1B recipients of all nationalities residing in Seatte, earning > $35,000
 
 ![image](https://github.com/user-attachments/assets/332c05a3-db8e-402e-b40f-098a4e5701dc)
 
