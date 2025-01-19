@@ -1,0 +1,131 @@
+---
+title: "H1B FOIA Data 2021-2023"
+author: "Leonce Nshuti"
+format: revealjs
+editor: visual
+---
+
+#### [H-1B Visa Lottery Dashboard](https://leoncensh-h1b-visa-trends.hf.space/)
+
+United States H-1B visa lottery system key metrics:
+
+-   Employer
+
+-   Salary
+
+-   Job title
+
+-   Country of origin
+
+```{r, message=FALSE}
+library(tidyverse)
+library(arrow)
+library(dbplyr, warn.conflicts = FALSE)
+library(duckdb)
+library(ggthemes)
+```
+
+## Data Overview
+
+```{r}
+trk_13139 <- open_dataset(
+  sources = "data/TRK_13139_FY2021_2023.csv", 
+  col_types = schema(ISBN = string()),
+  format = "csv"
+)
+
+trk_13139 %>%
+  as_tibble() %>%
+  sample_n(150) %>%
+  glimpse()
+```
+
+```{r}
+honebs_sum_compensaton <- 
+  trk_13139 |> 
+  group_by(country_of_birth,lottery_year) |> 
+  summarise(ben_comp_paid = sum(ben_comp_paid, na.rm = TRUE)) |> 
+  arrange(desc(ben_comp_paid)) |> 
+  collect() |>
+  ungroup() |>
+  mutate(lottery_year = factor(lottery_year)) |>
+  mutate(ben_comp_paid=paste0('$', round(ben_comp_paid,0))) |>
+  head(27)
+
+
+honebs_sum_compensaton %>% 
+  #filter(country_of_birth != "CHN") %>% 
+  ggplot(data=., aes(x=lottery_year,
+                     y=ben_comp_paid, 
+                     group = country_of_birth,
+                     colour=country_of_birth)) + 
+  geom_point() + 
+  geom_line() + 
+  theme(panel.grid = element_blank(),
+        panel.border = element_blank()) + 
+  labs(
+    title = "H1B salaries by Country of Origin and Lottery Year",
+    subtitle = "",
+    x = "Lottery Year", y = "Sum of Salary ($)",
+    color = "country_of_birth", shape = "country_of_birth"
+  ) +
+  theme_tufte()
+
+```
+
+```{r}
+trk_13139 |>
+  as_tibble() |>
+  filter(ed_level_definition == "MASTER'S DEGREE") |>
+  group_by(country_of_nationality,lottery_year) |> 
+  summarise(ben_comp_paid = sum(ben_comp_paid, na.rm = TRUE)) |> 
+  arrange(desc(ben_comp_paid)) %>% 
+  head(5)
+```
+
+### H1B salaries by Country of Origin and Lottery Year
+
+| country_of_nationality | **lottery_year** | **ben_comp_paid** |
+|------------------------|------------------|-------------------|
+| CHN                    | 2021             | 1,176,384,333     |
+| CHN                    | 2022             | 909,759,682       |
+| CHN                    | 2023             | 251,258,543       |
+| CAN                    | 2021             | 100,207,982       |
+| TWN                    | 2021             | 82,747,461        |
+| CAN                    | 2022             | 78,514,554        |
+| TWN                    | 2022             | 75,308,303        |
+| FRA                    | 2021             | 44,075,805        |
+| KOR                    | 2021             | 36,157,220        |
+| KOR                    | 2022             | 36,139,151        |
+
+### Core Filters
+
+1.  Fiscal year (2021, 2022, 2023)
+
+2.  Employer name (e.g., Wipro, Amazon).
+
+3.  Job title: (e.g., “Software Engineer”).
+
+4.  Country of birth, Country of nationality.
+
+5.  Salary: wage amount (e.g. \$50,000), wage unit(e.g. year).
+
+6.  Worksite: work-site city, work-site state.
+
+## Hong Kong H1Bs salary
+
+![](images/clipboard-1910641578.png)
+
+## Rwanda Aggregate salary
+
+```{r}
+trk_13139 %>% 
+  as_tibble() %>%
+  group_by(country_of_birth,lottery_year) %>% 
+  summarise(ben_comp_paid = sum(ben_comp_paid, na.rm = TRUE)) %>% 
+  arrange(desc(ben_comp_paid)) %>% 
+  ungroup() %>%
+  mutate(lottery_year = factor(lottery_year)) %>%
+  mutate(ben_comp_paid=paste0('$', round(ben_comp_paid,0))) %>%
+  filter(country_of_birth == "RWA") 
+```

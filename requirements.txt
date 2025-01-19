@@ -1,4 +1,8 @@
-pandas
-fastapi
-polars 
-gradio
+datasette==0.64.3
+sqlite-utils==3.35.2
+pandas==2.1.1
+scikit-learn==1.6.1
+fastapi<0.100.0
+polars<1.21.0
+gradio<4.0.0
+werkzeug==2.0.3
