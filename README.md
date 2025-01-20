@@ -17,6 +17,11 @@ Interactive dashboard to visualize the United States H-1B visa lottery system. E
 
 - 🔸 ✶ [H1Bs Database](https://lnshuti--h1b-data-explorer-ui.modal.run)
 
+# Demo 
+
+[Datasette Demo](honebs_cleaned.gif)
+
+
 ### **Figure 2:** Salary of H1B recipients from Ukraine earning > $50,000
 
 ![image](https://github.com/user-attachments/assets/e5277697-77aa-4879-90de-df6ad1d63581)
