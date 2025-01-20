@@ -3,3 +3,6 @@
 data 
 data/
 .Rproj.user
+__pycache__/
+__pycache__/*
+inspect_db.py
