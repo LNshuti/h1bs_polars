@@ -17,11 +17,11 @@ Interactive dashboard to visualize the United States H-1B visa lottery system. E
 
 - 🔸 ✶ [H1Bs Database](https://lnshuti--h1b-data-explorer-ui.modal.run)
 
-### **Figure 2:** Salary for H1B recipients from Ukraine earning > $50,000
+### **Figure 2:** Salary of H1B recipients from Ukraine earning > $50,000
 
 ![image](https://github.com/user-attachments/assets/e5277697-77aa-4879-90de-df6ad1d63581)
 
-### **Figure 3:** Salary for H1B recipients of all nationalities residing in Seatte, earning > $35,000
+### **Figure 3:** Salary of H1B recipients of all nationalities residing in Seatte, earning > $35,000
 
 ![image](https://github.com/user-attachments/assets/332c05a3-db8e-402e-b40f-098a4e5701dc)
 
