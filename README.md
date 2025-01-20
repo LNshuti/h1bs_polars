@@ -13,15 +13,11 @@ Interactive dashboard to visualize the United States H-1B visa lottery system. E
 5. Salary Range: wage amt(e.g. $50,000), wage unit(e.g. year).
 6. Worksite: worksite_city, worksite_state.
 
-### **Figure 2:** Number of H1B recipients with a salary between $150,000 and $900,000 in 2021-2023.
-
-![image](https://github.com/user-attachments/assets/166dc021-cbee-4b93-8041-3dc506a492e2)
-
-### **Figure 3:** Distribution of Salary by gender for people from Ukraine earning > $50,000
+### **Figure 2:** Distribution of Salary by gender for people from Ukraine earning > $50,000
 
 ![image](https://github.com/user-attachments/assets/e5277697-77aa-4879-90de-df6ad1d63581)
 
-### **Figure 4:** Salary for H1B recipients of all nationalities residing in Seatte, earning > $35,000
+### **Figure 3:** Salary for H1B recipients of all nationalities residing in Seatte, earning > $35,000
 
 ![image](https://github.com/user-attachments/assets/332c05a3-db8e-402e-b40f-098a4e5701dc)
 
