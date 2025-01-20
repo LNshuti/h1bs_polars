@@ -24,11 +24,13 @@ APP_NAME = "h1b-data-explorer"
 DB_FILENAME = "datasette.db"
 VOLUME_DIR = "/cache-vol"
 DB_PATH = pathlib.Path(VOLUME_DIR) / DB_FILENAME
-LOCAL_DB_PATH = "./data/datasette.db"
 
 # Initialize Modal app and resources
 app = modal.App(APP_NAME)
 volume = modal.Volume.from_name(f"{APP_NAME}-vol", create_if_missing=True)
+
+# Mount the local data directory
+data_mount = modal.Mount.from_local_dir("data", remote_path="/root/data")
 
 # Configure the container image
 datasette_image = (
@@ -42,6 +44,7 @@ datasette_image = (
 @app.function(
     image=datasette_image,
     volumes={VOLUME_DIR: volume},
+    mounts=[data_mount],
     timeout=900,
     retries=2,
 )
@@ -60,8 +63,9 @@ def prep_db():
         tmp_db_path = tmpdir_path / DB_FILENAME
         
         # Copy local database to temp directory
-        print(f"Copying database from {LOCAL_DB_PATH}")
-        shutil.copyfile(LOCAL_DB_PATH, tmp_db_path)
+        local_db = "/root/data/datasette.db"
+        print(f"Copying database from {local_db}")
+        shutil.copyfile(local_db, tmp_db_path)
         
         # Verify database and create indices
         db = sqlite_utils.Database(tmp_db_path)
