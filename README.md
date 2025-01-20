@@ -13,6 +13,10 @@ Interactive dashboard to visualize the United States H-1B visa lottery system. E
 5. Salary Range: wage amt(e.g. $50,000), wage unit(e.g. year).
 6. Worksite: worksite_city, worksite_state.
 
+## Explore the Data live with Datasette(SQLITE) deployed on Modal 
+
+- 🔸 ✶ [H1Bs Database](https://lnshuti--h1b-data-explorer-ui.modal.run)
+
 ### **Figure 2:** Salary for H1B recipients from Ukraine earning > $50,000
 
 ![image](https://github.com/user-attachments/assets/e5277697-77aa-4879-90de-df6ad1d63581)
