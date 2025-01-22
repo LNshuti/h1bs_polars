@@ -1,6 +1,6 @@
-#### [H-1B Visa Lottery Dashboard](https://leoncensh-h1b-visa-trends.hf.space) 
+<h2 align="center" style="margin-top:-10px">H-1B Visa Lottery Dashboard</h2> 
 
-Interactive dashboard to visualize the United States H-1B visa lottery system. Explore key metrics such as employer participation, salaries, job titles, and country of origin through detailed filters and visualizations. 
+Interactive dashboard of the United States H-1B visa lottery system. Explore key metrics such as employer participation, salaries, job titles, and country of origin through detailed filters and visualizations. 
 
 ### **Figure 1.** Core Filters
 
