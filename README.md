@@ -2,10 +2,7 @@
 
 Interactive dashboard of the United States H-1B visa lottery system. Explore key metrics such as employer participation, salaries, job titles, and country of origin through detailed filters and visualizations. 
 
-### **Figure 1.** Core Filters
-
-![image](https://github.com/user-attachments/assets/b7da1540-3a9f-422a-a325-2f7d1026b93f)
-
+### **Core Filters.** 
 1. Fiscal year
 2. Employer name (e.g., Wipro, Amazon).
 3. Job title: (e.g., “Software Engineer”).
