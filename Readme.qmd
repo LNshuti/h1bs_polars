@@ -23,24 +23,48 @@ library(arrow)
 library(dbplyr, warn.conflicts = FALSE)
 library(duckdb)
 library(ggthemes)
+library(did)
+library(treemap)
+library(scales)
+
 ```
 
 ## Data Overview
 
-```{r}
-trk_13139 <- open_dataset(
+```{r, include=FALSE}
+trk_13139 <-
+  open_dataset(
   sources = "data/TRK_13139_FY2021_2023.csv", 
   col_types = schema(ISBN = string()),
-  format = "csv"
-)
+  format = "csv") %>% 
+  as_tibble()
 
-trk_13139 %>%
-  as_tibble() %>%
-  sample_n(150) %>%
-  glimpse()
+iso_codes <- 
+  read_csv("data/country_iso_codes.csv") %>% 
+  janitor::clean_names()
+
+continents <- 
+  read_csv("data/continents2.csv") %>% 
+  janitor::clean_names() %>% 
+  select(name, alpha_3, region, sub_region) %>% 
+  filter(!is.na(region))
+
+h1b_data <- 
+  trk_13139 %>% 
+  filter(!is.na(wage_amt)) %>% 
+  select(country_of_birth, country_of_nationality,lottery_year,fein,ben_year_of_birth,
+         gender, job_title, wage_amt, wage_unit,first_decision, contains("work")) %>% 
+  #head() %>% 
+  left_join(continents, by = c("country_of_birth" = "alpha_3")) %>% 
+  rename(country_of_birth_nm = name) %>% 
+  left_join(continents %>% 
+              select(name, alpha_3), 
+            by = c("country_of_nationality" = "alpha_3")) %>% 
+  rename(country_of_nationality_nm = name) 
+
 ```
 
-```{r}
+```{r, include=FALSE}
 honebs_sum_compensaton <- 
   trk_13139 |> 
   group_by(country_of_birth,lottery_year) |> 
@@ -51,7 +75,6 @@ honebs_sum_compensaton <-
   mutate(lottery_year = factor(lottery_year)) |>
   mutate(ben_comp_paid=paste0('$', round(ben_comp_paid,0))) |>
   head(27)
-
 
 honebs_sum_compensaton %>% 
   #filter(country_of_birth != "CHN") %>% 
@@ -73,14 +96,14 @@ honebs_sum_compensaton %>%
 
 ```
 
-```{r}
+```{r, include=FALSE}
 trk_13139 |>
   as_tibble() |>
   filter(ed_level_definition == "MASTER'S DEGREE") |>
   group_by(country_of_nationality,lottery_year) |> 
   summarise(ben_comp_paid = sum(ben_comp_paid, na.rm = TRUE)) |> 
   arrange(desc(ben_comp_paid)) %>% 
-  head(5)
+  head(15)
 ```
 
 ### H1B salaries by Country of Origin and Lottery Year
@@ -112,20 +135,100 @@ trk_13139 |>
 
 6.  Worksite: work-site city, work-site state.
 
-## Hong Kong H1Bs salary
-
-![](images/clipboard-1910641578.png)
-
-## Rwanda Aggregate salary
-
-```{r}
-trk_13139 %>% 
+```{r, include=FALSE}
+summarized_countries <- 
+  trk_13139 %>% 
   as_tibble() %>%
   group_by(country_of_birth,lottery_year) %>% 
   summarise(ben_comp_paid = sum(ben_comp_paid, na.rm = TRUE)) %>% 
   arrange(desc(ben_comp_paid)) %>% 
   ungroup() %>%
-  mutate(lottery_year = factor(lottery_year)) %>%
-  mutate(ben_comp_paid=paste0('$', round(ben_comp_paid,0))) %>%
-  filter(country_of_birth == "RWA") 
+  mutate(lottery_year = factor(lottery_year)) 
+
+africa_ <- 
+  continents %>%
+  filter(region == "Africa") %>% 
+  pull(alpha_3)
+
+asia_ <- 
+  continents %>%
+  filter(region == "Asia") %>% 
+  pull(alpha_3)
+
+europe_ <- 
+  continents %>%
+  filter(region == "Europe") %>% 
+  pull(alpha_3)
+
+oceania_ <- 
+  continents %>%
+  filter(region == "Oceania") %>% 
+  pull(alpha_3)
+
+summarized_africa <- 
+  summarized_countries %>%
+  filter(country_of_birth %in% africa_) %>%
+  arrange(desc(ben_comp_paid))
+
+summarized_europe <- 
+  summarized_countries %>%
+  filter(country_of_birth %in% europe_) %>%
+  arrange(desc(ben_comp_paid))
+
+summarized_asia <- 
+  summarized_countries %>%
+  filter(country_of_birth %in% asia_) %>%
+  arrange(desc(ben_comp_paid))
+
+summarized_oceania <- 
+  summarized_countries %>%
+  filter(country_of_birth %in% oceania_) %>%
+  arrange(desc(ben_comp_paid))
+```
+
+## Africa 
+
+```{r}
+# Plot the treemap
+treemap(summarized_africa,
+        index = "country_of_birth",       
+        vSize = "ben_comp_paid",         
+        title = "Total H1B salaries",
+        palette = "Blues",       
+        type = "index")
+```
+
+## Asia 
+
+```{r}
+treemap(summarized_asia,
+        index = "country_of_birth",       
+        vSize = "ben_comp_paid",         
+        title = "Total H1B salaries",
+        palette = "Blues",       
+        type = "index")
+
+```
+
+## Europe 
+
+```{r}
+treemap(summarized_europe,
+        index = "country_of_birth",       
+        vSize = "ben_comp_paid",         
+        title = "Total H1B salaries",
+        palette = "Blues",       
+        type = "index")
+
+```
+
+## Oceania 
+
+```{r}
+treemap(summarized_oceania,
+        index = "country_of_birth",       
+        vSize = "ben_comp_paid",         
+        title = "Total H1B salaries",
+        palette = "Blues",  
+        type = "index")
 ```
