@@ -27,6 +27,11 @@ Interactive dashboard of the United States H-1B visa lottery system. Explore key
 
 ![image](https://github.com/user-attachments/assets/332c05a3-db8e-402e-b40f-098a4e5701dc)
 
+### **Figure 3:** Software Engineer H1B recipients
+
+![image](https://github.com/user-attachments/assets/34f1405f-8272-4be9-b0b2-c64d6dded56f)
+
+
 ### Visualizations:
 - Time-series chart: Registrations vs. approvals by year.
 - Treemap: Multiple vs. single registrations.
