@@ -40,7 +40,7 @@ GROUP BY employer_name, first_decision, ben_sex, ben_country_of_birth
 ORDER BY cumulative_sum desc, first_decision desc, employer_name;
 ```
 
-### Add [result](https://lnshuti--h1b-data-explorer-ui.modal.run/datasette?sql=SELECT+%0D%0A++++employer_name%2C+%0D%0A++++first_decision%2C+%0D%0A++++ben_sex%2C+%0D%0A++++ben_country_of_birth%2C+%0D%0A++++COUNT%281%29+AS+city%2C%0D%0A++++SUM%28COUNT%281%29%29+OVER+%28PARTITION+BY+employer_name+ORDER+BY+first_decision%29+AS+cumulative_sum%0D%0AFROM+%28%0D%0A++++SELECT+%0D%0A++++++++employer_name%2C%0D%0A++++++++first_decision%2C%0D%0A++++++++ben_sex%2C%0D%0A++++++++ben_country_of_birth%0D%0A++++FROM+trk_data%0D%0A%29+subquery%0D%0AGROUP+BY+employer_name%2C+first_decision%2C+ben_sex%2C+ben_country_of_birth%0D%0AORDER+BY+cumulative_sum+desc%2C+first_decision+desc%2C+employer_name%3B)
+### [result](https://lnshuti--h1b-data-explorer-ui.modal.run/datasette?sql=SELECT+%0D%0A++++employer_name%2C+%0D%0A++++first_decision%2C+%0D%0A++++ben_sex%2C+%0D%0A++++ben_country_of_birth%2C+%0D%0A++++COUNT%281%29+AS+city%2C%0D%0A++++SUM%28COUNT%281%29%29+OVER+%28PARTITION+BY+employer_name+ORDER+BY+first_decision%29+AS+cumulative_sum%0D%0AFROM+%28%0D%0A++++SELECT+%0D%0A++++++++employer_name%2C%0D%0A++++++++first_decision%2C%0D%0A++++++++ben_sex%2C%0D%0A++++++++ben_country_of_birth%0D%0A++++FROM+trk_data%0D%0A%29+subquery%0D%0AGROUP+BY+employer_name%2C+first_decision%2C+ben_sex%2C+ben_country_of_birth%0D%0AORDER+BY+cumulative_sum+desc%2C+first_decision+desc%2C+employer_name%3B)
 
 ### **Figure 1:** Salary of H1B recipients from Ukraine earning > $50,000
 
