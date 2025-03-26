@@ -20,7 +20,7 @@ Interactive dashboard of the United States H-1B visa lottery system. Explore key
 
 ### Example query
 
-```json
+```sql
 SELECT 
     employer_name, 
     first_decision, 
