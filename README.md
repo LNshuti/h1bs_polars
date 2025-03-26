@@ -42,6 +42,9 @@ ORDER BY cumulative_sum desc, first_decision desc, employer_name;
 
 ### [result](https://lnshuti--h1b-data-explorer-ui.modal.run/datasette?sql=SELECT+%0D%0A++++employer_name%2C+%0D%0A++++first_decision%2C+%0D%0A++++ben_sex%2C+%0D%0A++++ben_country_of_birth%2C+%0D%0A++++COUNT%281%29+AS+city%2C%0D%0A++++SUM%28COUNT%281%29%29+OVER+%28PARTITION+BY+employer_name+ORDER+BY+first_decision%29+AS+cumulative_sum%0D%0AFROM+%28%0D%0A++++SELECT+%0D%0A++++++++employer_name%2C%0D%0A++++++++first_decision%2C%0D%0A++++++++ben_sex%2C%0D%0A++++++++ben_country_of_birth%0D%0A++++FROM+trk_data%0D%0A%29+subquery%0D%0AGROUP+BY+employer_name%2C+first_decision%2C+ben_sex%2C+ben_country_of_birth%0D%0AORDER+BY+cumulative_sum+desc%2C+first_decision+desc%2C+employer_name%3B)
 
+![image](https://github.com/user-attachments/assets/2af4a5da-0604-47f8-bf57-e72a0718f381)
+
+
 ### **Figure 1:** Salary of H1B recipients from Ukraine earning > $50,000
 
 ![image](https://github.com/user-attachments/assets/e5277697-77aa-4879-90de-df6ad1d63581)
